@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vishesh - Developer Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(0, 0, 33);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 80px;
+            background-color: rgb(4, 4, 32);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            list-style: none;
+            margin: 0 23px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+        }
+
+        nav ul li a:hover {
+            color: rgb(133, 133, 249);
+            font-size: 1.04rem;
+        }
+
+        .left {
+            font-size: 1.5rem;
+        }
+
+        .section {
+            margin-top: 100px;
+            padding: 50px 0;
+        }
+
+        .firstSection {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100vh;
+            padding: 0 50px;
+        }
+
+        .leftSection {
+            font-size: 3rem;
+        }
+
+        .rightSection img {
+            width: 80%;
+            height: auto;
+            padding-left: 40%;
+        }
+
+        .purple {
+            color: blueviolet;
+        }
+
+        #element {
+            color: blueviolet;
+        }
+
+        /* About Section */
+        #about {
+            text-align: left;
+            padding-left: 4%;
+        }
+
+        #about h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        #about p {
+            text-align: left;
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 20px 0px;
+            line-height: 1.6;
+        }
+
+        /* Services Section */
+        .services {
+            background-color: rgb(4, 4, 32);
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .service-item {
+            margin: 20px 0;
+        }
+
+        /* Projects Section */
+        .projects {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #1c1c3c, #1a1a4c);
+            text-align: center;
+        }
+
+        .projects h2 {
+            margin-bottom: 50px;
+            font-size: 2.5rem;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 0 50px;
+        }
+
+        .project-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-item img {
+            width: 100%;
+            height: auto;
+            max-width: 100%;
+            border-radius: 5px;
+        }
+
+        .project-item h3 {
+            margin: 15px 0 10px;
+            font-size: 1.5rem;
+        }
+
+        .project-item p {
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .contact {
+            background-color: rgb(4, 4, 32);
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .contact-info {
+            margin: 20px 0;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            color: lightblue;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left">Vishesh's Portfolio</div>
+            <div class="right">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact Me</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="firstSection section">
+        <div class="leftSection">
+            Hi, My name is <span class="purple">Vishesh</span>
+            <div>and I am a</div>
+            <span id="element"></span>
+        </div>
+        <div class="rightSection">
+            <img src="bg.png" alt="Background Image">
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <h2>About Me</h2>
+        <p>Hello! I’m Vishesh, a passionate web developer and designer. I specialize in creating dynamic, responsive websites with a focus on user experience and functionality. I’m always eager to learn and apply new technologies in my work.</p>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services section">
+        <h2>My Services</h2>
+        <div class="service-item">Web Development</div>
+        <div class="service-item">UI/UX Design</div>
+        <div class="service-item">SEO Optimization</div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects section">
+        <h2>My Projects</h2>
+        <div class="project-grid">
+            <div class="project-item">
+                <img src="Nidaan's Poster No. 1.png" alt="Project 1 Image">
+                <h3>Project 1</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et dolor vel risus placerat viverra.</p>
+            </div>
+            <div class="project-item">
+                <img src="Nidaan's Poster No. 2.png" alt="Project 2 Image">
+                <h3>Project 2</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et dolor vel risus placerat viverra.</p>
+            </div>
+            <div class="project-item">
+                <img src="Nidaan's Poster No. 3.png" alt="Project 3 Image">
+                <h3>Project 3</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et dolor vel risus placerat viverra.</p>
+            </div>
+            <div class="project-item">
+                <img src="Nidaan's Poster No. 4.png" alt="Project 4 Image">
+                <h3>Project 4</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et dolor vel risus placerat viverra.</p>
+            </div>
+            <div class="project-item">
+                <img src="Nidaan's Poster No. 5.png" alt="Project 5 Image">
+                <h3>Project 5</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et dolor vel risus placerat viverra.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+        <h2>Contact Me</h2>
+        <p>If you'd like to get in touch, feel free to contact me through the details below:</p>
+        <div class="contact-info">
+            <p>Phone: <a href="tel:+919334708966">+919334708966</a></p>
+            <p>Email: <a href="mailto:908vishesh@gmail.com">908vishesh@gmail.com</a></p>
