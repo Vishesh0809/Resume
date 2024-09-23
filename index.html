@@ -47,6 +47,7 @@
         nav ul li a {
             text-decoration: none;
             color: white;
+            transition: color 0.3s ease;
         }
 
         nav ul li a:hover {
@@ -73,12 +74,19 @@
 
         .leftSection {
             font-size: 3rem;
+            text-align: left;
         }
 
         .rightSection img {
-            width: 80%;
-            height: auto;
-            padding-left: 40%;
+            width: 50%;
+            height: 0%;
+            transform: translateX(+300px);
+            transition: transform 1.0s ease, opacity 0.5s ease;
+        }
+
+        .rightSection img:hover {
+            transform: translateX(-20px); /* Moves the image 20px to the left on hover */
+            opacity: 0.9; /* Optional: slightly dim the image on hover */
         }
 
         .purple {
@@ -87,12 +95,12 @@
 
         #element {
             color: blueviolet;
+            font-weight: bold;
         }
 
         /* About Section */
         #about {
-            text-align: left;
-            padding-left: 4%;
+            text-align: center;
         }
 
         #about h2 {
@@ -101,34 +109,71 @@
         }
 
         #about p {
-            text-align: left;
             font-size: 1.1rem;
             max-width: 800px;
-            margin: 20px 0px;
+            margin: 20px auto;
             line-height: 1.6;
         }
 
         /* Services Section */
-        .services {
+        .services {          /*Ye My services wala part hai*/
             background-color: rgb(4, 4, 32);
             padding: 50px 0;
-            text-align: center;
+            text-align: left;
+            margin-left: 50px;
+        }
+
+        .services h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            margin-left: 30px;
         }
 
         .service-item {
             margin: 20px 0;
+            font-size: 1.5rem;
+            text-align: left;
+            padding-left: 4%;
+            margin-left: 50px;
+        }
+
+        .service-item::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: lightblue;
+            transition: width 0.3s;
+            position: absolute;
+            bottom: -5px;
+            left: 50px;
+            margin-left: 50px;
+        }
+
+        .service-item:hover::after {
+            width: 100%;
+            margin-left: 50px;
+        }
+
+        .services p {
+            text-align: left;
+            padding-left: 4%;
+            max-width: 800px;
+            margin: 0 0 20px 0;
+            margin-left: 50px;
         }
 
         /* Projects Section */
         .projects {
             padding: 80px 0;
             background: linear-gradient(135deg, #1c1c3c, #1a1a4c);
-            text-align: center;
+            
         }
 
         .projects h2 {
             margin-bottom: 50px;
             font-size: 2.5rem;
+            margin-left: 50px;
         }
 
         .project-grid {
@@ -167,25 +212,54 @@
             line-height: 1.5;
         }
 
+        /* Contact Section */
         .contact {
             background-color: rgb(4, 4, 32);
             padding: 50px 0;
-            text-align: center;
+            text-align: left;
+            margin-left: 50px;
         }
 
         .contact-info {
             margin: 20px 0;
+            margin-left: 50px;
         }
 
         .contact-info a {
             color: white;
             text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
         }
 
         .contact-info a:hover {
             color: lightblue;
         }
 
+        /* Animations */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Adding subtle animation to sections */
+        .section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 
@@ -216,6 +290,13 @@
             <img src="bg.png" alt="Background Image">
         </div>
     </section>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+          strings: ['Web Designer', 'Graphic Designer', 'BITian'],
+          typeSpeed: 50,
+        });
+    </script>
 
     <!-- About Section -->
     <section id="about" class="section">
@@ -223,12 +304,19 @@
         <p>Hello! I’m Vishesh, a passionate web developer and designer. I specialize in creating dynamic, responsive websites with a focus on user experience and functionality. I’m always eager to learn and apply new technologies in my work.</p>
     </section>
 
-    <!-- Services Section -->
     <section id="services" class="services section">
         <h2>My Services</h2>
-        <div class="service-item">Web Development</div>
-        <div class="service-item">UI/UX Design</div>
-        <div class="service-item">SEO Optimization</div>
+        <ul>
+            <li>Web Development
+                <p>Creating dynamic, responsive, and modern websites.</p>
+            </li>
+            <li>UI/UX Design
+                <p>Designing intuitive user interfaces with smooth user experience.</p>
+            </li>
+            <li>SEO Optimization
+                <p>Improving search engine visibility to boost traffic.</p>
+            </li>
+        </ul>
     </section>
 
     <!-- Projects Section -->
@@ -260,6 +348,11 @@
                 <h3>Project 5</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et dolor vel risus placerat viverra.</p>
             </div>
+            <div class="project-item">
+                <img src="Nidaan's Poster No. 6.png" alt="Project 6 Image">
+                <h3>Project 6</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et dolor vel risus placerat viverra.</p>
+            </div>
         </div>
     </section>
 
@@ -270,3 +363,25 @@
         <div class="contact-info">
             <p>Phone: <a href="tel:+919334708966">+919334708966</a></p>
             <p>Email: <a href="mailto:908vishesh@gmail.com">908vishesh@gmail.com</a></p>
+        </div>
+    </section>
+
+    <script>
+        // Scroll animations
+        const sections = document.querySelectorAll('.section');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+
+</html>
